@@ -1,0 +1,87 @@
+.data_table {
+  --primary-color: #00324a;
+  --primary-font-color: #fff;
+  position: relative;
+  height: inherit;
+}
+
+.border {
+  position: absolute;
+  border: 2px solid var(--primary-color);
+  top: 0;
+  left: 0;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: -1;
+  border-radius: 8px 8px;
+}
+
+.table_sub-container {
+  border-radius: 0px 0px 6px 6px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.table_container {
+  overflow: auto;
+  scroll-padding: 20rem;
+  scroll-snap-type: proximity;
+  border-radius: 0px 0px 8px 8px;
+  position: relative;
+  height: 100%;
+}
+
+.table_container::-webkit-scrollbar {
+  width: 1rem; /* Total width including `border-width` of scrollbar thumb */
+}
+
+.table_container::-webkit-scrollbar-thumb {
+  border: 0.2rem solid rgba(0, 0, 0, 0); /* Transparent border together with `background-clip: padding-box` does the trick */
+  background-clip: padding-box;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+}
+
+.table_container::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.table_container::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 8px;
+}
+
+table tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
+
+table tr:last-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+th,
+td {
+  padding: 8px 16px;
+}
+
+th {
+  background: var(--primary-color);
+  color: var(--primary-font-color);
+}

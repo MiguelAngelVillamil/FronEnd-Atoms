@@ -1,0 +1,24 @@
+<div #tableContainer class="data_table" [ngStyle]="{
+    '--primary-color' : style.primaryColor,
+    '--primary-font-color' : style.primaryFontColor
+  }">
+  <div class="border"></div>
+  <div class="table_container">
+    <div class="table_sub-container">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let column of columns">{{ column.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of data">
+            <td *ngFor="let col of columns">
+              {{ row[col.source] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

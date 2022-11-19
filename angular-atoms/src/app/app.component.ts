@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import provincias from 'src/assets/data/provincias';
+import { IDataTableColumn } from './components/data-table/data-table.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-atoms';
+  public tableData = provincias
+  public tableColumns: IDataTableColumn[] = [
+    {
+      name: 'Nombre',
+      source: 'nombre'
+    }
+  ]
 }
